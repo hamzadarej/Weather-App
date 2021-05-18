@@ -26,3 +26,23 @@ function changeBg() {
   }
 }
 changeBg();
+
+const searchBox = document.querySelector(".search-box");
+searchBox.addEventListener("keypress", searchQuery);
+
+function searchQuery(e) {
+  if (e.keyCode == 13) {
+    getResults(searchBox.value);
+  }
+}
+
+function getResults() {}
+
+function dateBuilder() {
+  let today = new Date();
+
+  let date =
+    today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
+
+  return date;
+}
