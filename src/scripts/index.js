@@ -56,7 +56,7 @@ const city = document.querySelector(".city");
 searchBox.addEventListener("keypress", pressEnter);
 function pressEnter(event) {
   if (event.keyCode == 13) {
-    city.innerHTML = searchBox.value;
+    getResults(searchbox.value);
   }
 }
 
@@ -69,7 +69,7 @@ function getResults(query) {
 }
 
 function displayResults(weather) {
-  let city = document.querySelector(".location .city");
+  let city = document.querySelector("city");
   city.innerText = `${weather.name}, ${weather.sys.country}`;
   console.log(weather);
 
@@ -83,4 +83,7 @@ function displayResults(weather) {
   hiLow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(
     weather.main.temp_max
   )}°c`;
+
+  let icon = document.querySelector(".icon");
+  icon.innerHTML = `${weather.main.temp}`;
 }
