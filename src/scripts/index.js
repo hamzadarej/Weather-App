@@ -24,3 +24,5 @@ function searchQuery(e) {
     getResults(searchBox.value);
   }
 }
+
+function getResults() {}
