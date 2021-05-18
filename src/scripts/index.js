@@ -49,6 +49,7 @@ function changeBg() {
 changeBg();
 
 // searchbox eventlistenr & keypress
+
 const searchBox = document.querySelector(".search-box");
 const city = document.querySelector(".city");
 
@@ -67,6 +68,7 @@ function getResults(query) {
     })
     .then(displayResults);
 }
+
 
 function displayResults(weather) {
   let city = document.querySelector(".location .city");
