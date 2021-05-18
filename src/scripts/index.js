@@ -38,6 +38,7 @@ function changeBg() {
 changeBg();
 
 // searchbox eventlistenr & keypress
+
 const searchBox = document.querySelector(".search-box");
 const city = document.querySelector(".city");
 
@@ -57,7 +58,7 @@ function getResults(query) {
 }
 
 function displayResults(weather) {
-  let city = document.querySelector(".location .city");
+  let city = document.querySelector(".city");
   city.innerText = `${weather.name}, ${weather.sys.country}`;
   console.log(weather);
 
@@ -74,4 +75,13 @@ function displayResults(weather) {
   hiLow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(
     weather.main.temp_max
   )}°c`;
+
+  let icon = document.querySelector(".icon");
+  iconCode = weather.weather[0].icon;
+
+  let iconLink = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
+
+  let image = document.querySelector("img");
+
+  image.src = iconLink;
 }
