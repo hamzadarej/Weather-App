@@ -73,8 +73,8 @@ function displayResults(weather) {
   city.innerText = `${weather.name}, ${weather.sys.country}`;
   console.log(weather);
 
-  let temp = document.querySelector(".temp");
-  temp.innerHTML = `${Math.round(weather.main.temp)}<span>°c</span>`;
+  let temp = document.querySelector(".tempN");
+  temp.innerHTML = `${Math.round(weather.main.temp)}`;
 
   let weather_el = document.querySelector(".weather");
   weather_el.innerText = weather.weather[0].main;
