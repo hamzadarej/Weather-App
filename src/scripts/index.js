@@ -38,7 +38,6 @@ function changeBg() {
 changeBg();
 
 // searchbox eventlistenr & keypress
-
 const searchBox = document.querySelector(".search-box");
 const city = document.querySelector(".city");
 
@@ -46,6 +45,10 @@ searchBox.addEventListener("keypress", pressEnter);
 function pressEnter(event) {
   if (event.keyCode == 13) {
     getResults(searchBox.value);
+
+
+    console.log(event.keyCode);
+
   }
 }
 
@@ -61,8 +64,15 @@ function displayResults(weather) {
   let city = document.querySelector(".location .city");
   city.innerText = `${weather.name}, ${weather.sys.country}`;
   console.log(weather);
+
   let temp = document.querySelector(".tempN");
   temp.innerHTML = `${Math.floor(weather.main.temp)}`;
+
+
+  let temp = document.querySelector(".tempN");
+  temp.innerHTML = `${Math.round(weather.main.temp)}`;
+
+
   let weather_el = document.querySelector(".weather");
   weather_el.innerText = weather.weather[0].main;
 
