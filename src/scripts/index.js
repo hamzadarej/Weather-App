@@ -72,4 +72,15 @@ function displayResults(weather) {
   let city = document.querySelector(".location .city");
   city.innerText = `${weather.name}, ${weather.sys.country}`;
   console.log(weather);
+
+  let temp = document.querySelector(".temp");
+  temp.innerHTML = `${Math.round(weather.main.temp)}<span>°c</span>`;
+
+  let weather_el = document.querySelector(".weather");
+  weather_el.innerText = weather.weather[0].main;
+
+  let hiLow = document.querySelector(".hi-low");
+  hiLow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(
+    weather.main.temp_max
+  )}°c`;
 }
