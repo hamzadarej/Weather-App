@@ -37,3 +37,12 @@ function searchQuery(e) {
 }
 
 function getResults() {}
+
+function dateBuilder() {
+  var today = new Date();
+
+  var date =
+    today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
+
+  return date;
+}
