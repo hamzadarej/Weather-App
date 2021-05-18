@@ -1,29 +1,15 @@
-.app-wrap {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.6));
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  color: white;
-  text-align: center;
-  width: 100%;
-  font-size: small;
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-* html {
+
+html {
   font-size: 10px;
 }
-* html body {
-  font-size: 1.6ren;
+
+body {
+  font-size: 1.6rem;
   font-family: "montserrat", sans-serif;
   background-image: url(../images/normalW.jpg);
   background-size: cover;
@@ -32,12 +18,20 @@ footer {
   position: relative;
 }
 
+.app-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.6));
+}
+
 header {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 50px 15px 15px;
 }
+
 header input {
   width: 100%;
   max-width: 280px;
@@ -64,28 +58,38 @@ main {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  /* border: 2px solid red; */
 }
-main .location .city {
+
+.location .city {
   color: #fff;
   font-size: 32px;
   font-weight: 500;
   margin-bottom: 5px;
 }
-main .location .date {
+
+.location .date {
   color: #fff;
   font-size: 16px;
 }
-main .current .temp {
+
+/* .current {
+  border: 2px solid red;
+} */
+.current .temp {
+  /* border: 2px solid red; */
   color: #fff;
   font-size: 102px;
   font-weight: 900;
   margin: 30px 0px;
   text-shadow: 2px 10px rgba(0, 0, 0, 0.3);
 }
-main .current .temp span {
+
+.current .temp span {
   font-weight: 500;
 }
-main .current .temp .weather {
+
+.current .weather {
   color: #fff;
   font-size: 32px;
   font-weight: 700;
@@ -93,11 +97,21 @@ main .current .temp .weather {
   margin-bottom: 15px;
   text-shadow: 0, 0, 0, 0.4;
 }
-main .current .temp .hi-low {
+
+.current .hi-low {
   color: #fff;
   font-size: 24px;
   font-weight: 500;
   text-shadow: 0px 4px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  color: white;
+  text-align: center;
+  width: 100%;
+  font-size: small;
 }
 
 /*# sourceMappingURL=main.css.map */
