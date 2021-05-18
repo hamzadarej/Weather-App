@@ -1,3 +1,14 @@
+// selector and listener
+
+const searchbox =
+  // push Enter on keyboard function
+
+  function setQuery(event) {};
+
+// get results function
+
+function getResults(query) {}
+
 // Year for Copyright
 const year = new Date();
 const setYear = document.querySelector(".year");
@@ -33,6 +44,7 @@ function changeBg() {
   }
 }
 changeBg();
+
 // searchbox eventlistenr & keypress
 const searchBox =document.querySelector(".search-box");
 const city =document.querySelector(".city");
@@ -44,4 +56,16 @@ function pressEnter(event){
     
   }
 }
+
+
+const searchBox = document.querySelector(".search-box");
+searchBox.addEventListener("keypress", searchQuery);
+
+function searchQuery(e) {
+  if (e.keyCode == 13) {
+    getResults(searchBox.value);
+  }
+}
+
+function getResults() {}
 
