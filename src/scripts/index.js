@@ -3,17 +3,6 @@ const api = {
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
-// selector and listener
-
-const searchbox =
-  // push Enter on keyboard function
-
-  function setQuery(event) {};
-
-// get results function
-
-function getResults(query) {}
-
 // Year for Copyright
 const year = new Date();
 const setYear = document.querySelector(".year");
