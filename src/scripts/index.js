@@ -15,3 +15,14 @@ function changeBg() {
   }
 }
 changeBg();
+const searchBox =document.querySelector(".search-box");
+const city =document.querySelector(".city");
+
+searchBox.addEventListener("keypress",pressEnter);
+function pressEnter(event){
+  if(event.keyCode ==13){
+    city.innerHTML=searchBox.value
+    
+  }
+}
+
