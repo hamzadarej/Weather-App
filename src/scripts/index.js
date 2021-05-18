@@ -74,4 +74,8 @@ function displayResults(weather) {
   let city = document.querySelector(".location .city");
   city.innerText = `${weather.name}, ${weather.sys.country}`;
   console.log(weather);
+  let temp = document.querySelector(".tempN");
+temp.innerHTML= `${Math.floor(weather.main.temp)}`;
+
 }
+
