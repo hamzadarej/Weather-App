@@ -39,9 +39,9 @@ function searchQuery(e) {
 function getResults() {}
 
 function dateBuilder() {
-  var today = new Date();
+  let today = new Date();
 
-  var date =
+  let date =
     today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
 
   return date;
