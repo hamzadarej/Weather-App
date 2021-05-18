@@ -15,3 +15,12 @@ function changeBg() {
   }
 }
 changeBg();
+
+const searchBox = document.querySelector(".search-box");
+searchBox.addEventListener("keypress", searchQuery);
+
+function searchQuery(e) {
+  if (e.keyCode == 13) {
+    getResults(searchBox.value);
+  }
+}
