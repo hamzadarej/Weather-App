@@ -1,9 +1,11 @@
 // Year for Copyright
 const year = new Date();
 const setYear = document.querySelector(".year");
-setYear.innerHTML = year.getFullYear();
+const getFullYear =year.getFullYear()
+setYear.innerHTML = getFullYear;
 // Current date
 const date = document.querySelector(".date");
+
 const getDayName = () => {
   return year.toLocaleDateString('en-US', { weekday: "long" });
 };
@@ -13,7 +15,8 @@ const getTime = () => {
 const getMonthName = () => {
   return year.toLocaleDateString('en-US', { month: "long" });
 };
-date.innerHTML=`${getDayName()} ${getTime()} ${getMonthName()}`;
+
+date.innerHTML=`${getDayName()} ${getTime()} ${getMonthName()} ${getFullYear}`;
 
 
 
