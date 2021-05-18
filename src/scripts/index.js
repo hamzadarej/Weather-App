@@ -69,9 +69,18 @@ function getResults(query) {
     .then(displayResults);
 }
 
-
 function displayResults(weather) {
-  let city = document.querySelector(".location .city");
+  let city = document.querySelector(".city");
   city.innerText = `${weather.name}, ${weather.sys.country}`;
-  console.log(weather);
+
+  let temp = document.querySelector(".tempN");
+  temp.innerHTML = `${Math.round(weather.main.temp)}`;
+
+  let weather_el = document.querySelector(".weather");
+  weather_el.innerText = weather.weather[0].main;
+
+  let hilow = document.querySelector(".hi-low");
+  hilow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(
+    weather.main.temp_max
+  )}°c`;
 }
