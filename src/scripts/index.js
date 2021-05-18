@@ -3,6 +3,16 @@ const api = {
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
+// selector and listener
+
+const searchbox =
+  // push Enter on keyboard function
+
+  function setQuery(event) {};
+
+// get results function
+
+function getResults(query) {}
 
 // Year for Copyright
 const year = new Date();
@@ -46,22 +56,13 @@ const city = document.querySelector(".city");
 searchBox.addEventListener("keypress", pressEnter);
 function pressEnter(event) {
   if (event.keyCode == 13) {
-
-    getResults(searchbox.value);
-  }
-}
-
-function getResults() {}
-
     getResults(searchBox.value);
     console.log(event.keyCode);
   }
 }
 
 function getResults(query) {
-  fetch(
-    "https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&appid={d3e762b7515d7184e5b7fb330d373dc5}"
-  )
+  fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
     .then((weather) => {
       return weather.json();
     })
@@ -69,9 +70,18 @@ function getResults(query) {
 }
 
 function displayResults(weather) {
-  //   let city = document.querySelector(".location .city");
-  //   city.innerText = `${weather.name}, ${weather.sys.country}`;
-  //   console.log(city);
+  let city = document.querySelector(".location .city");
+  city.innerText = `${weather.name}, ${weather.sys.country}`;
   console.log(weather);
-}
 
+  let temp = document.querySelector(".temp");
+  temp.innerHTML = `${Math.round(weather.main.temp)}<span>°c</span>`;
+
+  let weather_el = document.querySelector(".weather");
+  weather_el.innerText = weather.weather[0].main;
+
+  let hiLow = document.querySelector(".hi-low");
+  hiLow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(
+    weather.main.temp_max
+  )}°c`;
+}
