@@ -1,3 +1,9 @@
+const api = {
+  key: "d3e762b7515d7184e5b7fb330d373dc5",
+  base: "https://api.openweathermap.org/data/2.5/",
+};
+
+
 // Year for Copyright
 const year = new Date();
 const setYear = document.querySelector(".year");
@@ -33,14 +39,39 @@ function changeBg() {
 changeBg();
 
 // searchbox eventlistenr & keypress
+
 const searchBox = document.querySelector(".search-box");
 const city = document.querySelector(".city");
 
 searchBox.addEventListener("keypress", pressEnter);
 function pressEnter(event) {
   if (event.keyCode == 13) {
-    city.innerHTML = searchBox.value;
+
+    getResults(searchbox.value);
   }
 }
 
 function getResults() {}
+
+    getResults(searchBox.value);
+    console.log(event.keyCode);
+  }
+}
+
+function getResults(query) {
+  fetch(
+    "https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&appid={d3e762b7515d7184e5b7fb330d373dc5}"
+  )
+    .then((weather) => {
+      return weather.json();
+    })
+    .then(displayResults);
+}
+
+function displayResults(weather) {
+  //   let city = document.querySelector(".location .city");
+  //   city.innerText = `${weather.name}, ${weather.sys.country}`;
+  //   console.log(city);
+  console.log(weather);
+}
+
