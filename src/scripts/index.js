@@ -56,8 +56,7 @@ const city = document.querySelector(".city");
 searchBox.addEventListener("keypress", pressEnter);
 function pressEnter(event) {
   if (event.keyCode == 13) {
-    getResults(searchBox.value);
-    console.log(event.keyCode);
+    city.innerHTML = searchBox.value;
   }
 }
 
