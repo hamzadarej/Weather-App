@@ -56,8 +56,7 @@ const city = document.querySelector(".city");
 searchBox.addEventListener("keypress", pressEnter);
 function pressEnter(event) {
   if (event.keyCode == 13) {
-    getResults(searchBox.value);
-    console.log(event.keyCode);
+    city.innerHTML = searchBox.value;
   }
 }
 
@@ -69,7 +68,6 @@ function getResults(query) {
     .then(displayResults);
 }
 
-
 function displayResults(weather) {
   let city = document.querySelector(".location .city");
   city.innerText = `${weather.name}, ${weather.sys.country}`;
@@ -77,5 +75,16 @@ function displayResults(weather) {
   let temp = document.querySelector(".tempN");
 temp.innerHTML= `${Math.floor(weather.main.temp)}`;
 
+
+  let temp = document.querySelector(".temp");
+  temp.innerHTML = `${Math.round(weather.main.temp)}<span>°c</span>`;
+
+  let weather_el = document.querySelector(".weather");
+  weather_el.innerText = weather.weather[0].main;
+
+  let hiLow = document.querySelector(".hi-low");
+  hiLow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(
+    weather.main.temp_max
+  )}°c`;
 }
 
