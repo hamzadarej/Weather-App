@@ -3,17 +3,6 @@ const api = {
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
-// selector and listener
-
-const searchbox =
-  // push Enter on keyboard function
-
-  function setQuery(event) {};
-
-// get results function
-
-function getResults(query) {}
-
 // Year for Copyright
 const year = new Date();
 const setYear = document.querySelector(".year");
@@ -56,7 +45,7 @@ const city = document.querySelector(".city");
 searchBox.addEventListener("keypress", pressEnter);
 function pressEnter(event) {
   if (event.keyCode == 13) {
-    city.innerHTML = searchBox.value;
+    getResults(searchBox.value);
   }
 }
 
@@ -73,12 +62,7 @@ function displayResults(weather) {
   city.innerText = `${weather.name}, ${weather.sys.country}`;
   console.log(weather);
   let temp = document.querySelector(".tempN");
-temp.innerHTML= `${Math.floor(weather.main.temp)}`;
-
-
-  let temp = document.querySelector(".temp");
-  temp.innerHTML = `${Math.round(weather.main.temp)}<span>°c</span>`;
-
+  temp.innerHTML = `${Math.floor(weather.main.temp)}`;
   let weather_el = document.querySelector(".weather");
   weather_el.innerText = weather.weather[0].main;
 
@@ -86,5 +70,5 @@ temp.innerHTML= `${Math.floor(weather.main.temp)}`;
   hiLow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(
     weather.main.temp_max
   )}°c`;
-}
 
+} 
