@@ -58,11 +58,13 @@ function getResults(query) {
 }
 
 function displayResults(weather) {
-  let city = document.querySelector(".location .city");
+  let city = document.querySelector(".city");
   city.innerText = `${weather.name}, ${weather.sys.country}`;
   console.log(weather);
+
   let temp = document.querySelector(".tempN");
-  temp.innerHTML = `${Math.floor(weather.main.temp)}`;
+  temp.innerHTML = `${Math.round(weather.main.temp)}`;
+
   let weather_el = document.querySelector(".weather");
   weather_el.innerText = weather.weather[0].main;
 
@@ -71,4 +73,12 @@ function displayResults(weather) {
     weather.main.temp_max
   )}°c`;
 
-} 
+  let icon = document.querySelector(".icon");
+  iconCode = weather.weather[0].icon;
+
+  let iconLink = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
+
+  let image = document.querySelector("img");
+
+  image.src = iconLink;
+}

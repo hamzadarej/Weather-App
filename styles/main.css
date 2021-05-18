@@ -23,11 +23,11 @@ footer {
 html {
   font-size: 10px;
 }
-
-body {
+html body {
   font-size: 1.6rem;
   font-family: "montserrat", sans-serif;
-  background-image: url(../../images/bg.jpg);
+  background-image: url(../images/normalW.jpg);
+  background-image: url(../../images/normalW.jpg);
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
@@ -84,22 +84,8 @@ main .temp {
   margin: 30px 0px;
   text-shadow: 2px 10px rgba(0, 0, 0, 0.3);
 }
-main span {
+main .temp span {
   font-weight: 500;
-}
-main .weather {
-  color: #fff;
-  font-size: 32px;
-  font-weight: 700;
-  font-style: italic;
-  margin-bottom: 15px;
-  text-shadow: 0, 0, 0, 0.4;
-}
-main .hi-low {
-  color: #fff;
-  font-size: 24px;
-  font-weight: 500;
-  text-shadow: 0px 4px rgba(0, 0, 0, 0.3);
 }
 
 .weather {
