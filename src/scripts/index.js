@@ -1,7 +1,18 @@
-// const api = {
-//   key: "d3e762b7515d7184e5b7fb330d373dc5",
-//   base: "https://api.openweathermap.org/data/2.5/",
-// };
+const api = {
+  key: "d3e762b7515d7184e5b7fb330d373dc5",
+  base: "https://api.openweathermap.org/data/2.5/",
+};
+
+// selector and listener
+
+const searchbox =
+  // push Enter on keyboard function
+
+  function setQuery(event) {};
+
+// get results function
+
+function getResults(query) {}
 
 // Year for Copyright
 const year = new Date();
@@ -51,9 +62,7 @@ function pressEnter(event) {
 }
 
 function getResults(query) {
-  fetch(
-    "https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&appid={d3e762b7515d7184e5b7fb330d373dc5}"
-  )
+  fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
     .then((weather) => {
       return weather.json();
     })
@@ -62,8 +71,7 @@ function getResults(query) {
 
 
 function displayResults(weather) {
-  //   let city = document.querySelector(".location .city");
-  //   city.innerText = `${weather.name}, ${weather.sys.country}`;
-  //   console.log(city);
+  let city = document.querySelector(".location .city");
+  city.innerText = `${weather.name}, ${weather.sys.country}`;
   console.log(weather);
 }
