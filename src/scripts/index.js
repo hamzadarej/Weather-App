@@ -1,8 +1,23 @@
 // Year for Copyright
-const year = new Date().getFullYear();
+const year = new Date();
 const setYear = document.querySelector(".year");
-setYear.innerHTML = year;
+setYear.innerHTML = year.getFullYear();
+// Current date
+const date = document.querySelector(".date");
+const getDayName = () => {
+  return year.toLocaleDateString('en-US', { weekday: "long" });
+};
+const getTime = () => {
+  return year.toLocaleDateString('en-US', { day: "numeric" });
+};
+const getMonthName = () => {
+  return year.toLocaleDateString('en-US', { month: "long" });
+};
+date.innerHTML=`${getDayName()} ${getTime()} ${getMonthName()}`;
 
+
+
+//Change background depend of the Temperature
 function changeBg() {
   let temp = document.querySelector(".tempN").innerHTML;
   let body = document.querySelector("body");
@@ -15,6 +30,7 @@ function changeBg() {
   }
 }
 changeBg();
+// searchbox eventlistenr & keypress
 const searchBox =document.querySelector(".search-box");
 const city =document.querySelector(".city");
 
