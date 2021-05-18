@@ -38,6 +38,7 @@ function changeBg() {
 changeBg();
 
 // searchbox eventlistenr & keypress
+
 const searchBox = document.querySelector(".search-box");
 const city = document.querySelector(".city");
 
