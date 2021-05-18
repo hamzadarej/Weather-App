@@ -38,6 +38,7 @@ function changeBg() {
 changeBg();
 
 // searchbox eventlistenr & keypress
+
 const searchBox = document.querySelector(".search-box");
 const city = document.querySelector(".city");
 
@@ -45,9 +46,6 @@ searchBox.addEventListener("keypress", pressEnter);
 function pressEnter(event) {
   if (event.keyCode == 13) {
     getResults(searchBox.value);
-
-
-    console.log(event.keyCode);
 
   }
 }
@@ -61,7 +59,7 @@ function getResults(query) {
 }
 
 function displayResults(weather) {
-  let city = document.querySelector(".location .city");
+  let city = document.querySelector(".city");
   city.innerText = `${weather.name}, ${weather.sys.country}`;
   console.log(weather);
 
@@ -81,4 +79,15 @@ function displayResults(weather) {
     weather.main.temp_max
   )}°c`;
 
-} 
+
+  let icon = document.querySelector(".icon");
+  iconCode = weather.weather[0].icon;
+
+  let iconLink = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
+
+  let image = document.querySelector("img");
+
+  image.src = iconLink;
+}
+
+
