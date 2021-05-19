@@ -50,6 +50,7 @@ function displayResults(weather) {
   city.innerText = `${weather.name}, ${weather.sys.country}`;
   console.log(weather);
 
+  //Getting weather basic information
   let temp = document.querySelector(".tempN");
   temp.innerHTML = `${Math.round(weather.main.temp)}`;
 
@@ -58,6 +59,7 @@ function displayResults(weather) {
   weather_el.innerText = weather.weather[0].main;
   console.log(weather_el.innerText);
 
+  //Wind Information
   let wind = document.querySelector(".windDeg");
   wind.innerText = weather.wind.deg;
 
@@ -69,6 +71,7 @@ function displayResults(weather) {
     windGust.innerText = weather.wind.gust;
   }
 
+  //Additional information
   let feelsLike = document.querySelector(".feels");
   feelsLike.innerText = `${Math.round(weather.main.feels_like)}`;
 
