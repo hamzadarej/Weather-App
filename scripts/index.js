@@ -50,6 +50,7 @@ function displayResults(weather) {
   city.innerText = `${weather.name}, ${weather.sys.country}`;
   console.log(weather);
 
+  //Getting weather basic information
   let temp = document.querySelector(".tempN");
   temp.innerHTML = `${Math.round(weather.main.temp)}`;
 
@@ -58,17 +59,40 @@ function displayResults(weather) {
   weather_el.innerText = weather.weather[0].main;
   console.log(weather_el.innerText);
 
+  //Wind Information
   let wind = document.querySelector(".windDeg");
   wind.innerText = weather.wind.deg;
+  //wind directions N,W,S,E
+  function getWind() {
+    var windDir = weather.wind.deg;
+    console.log(windDir);
+    if (windDir >= 310 && windDir <= 360) {
+      wind.innerText = "N";
+    }
+    if (windDir >= 1 && windDir <= 50) {
+      wind.innerText = "N";
+    }
+    if (windDir <= 309 && windDir >= 230) {
+      wind.innerText = "W";
+    }
+    if (windDir <= 229 && windDir >= 130) {
+      wind.innerText = "S";
+    }
+    if (windDir >= 129 && windDir <= 49) {
+      wind.innerText = "E";
+    }
+  }
+  getWind();
 
   let windSpeed = document.querySelector(".windSpeed");
-  windSpeed.innerText = weather.wind.speed;
+  windSpeed.innerText = `${weather.wind.speed} km/h`;
 
   let windGust = document.querySelector(".windGust");
   if (weather.wind.gust) {
-    windGust.innerText = weather.wind.gust;
+    windGust.innerText = `${weather.wind.gust} km/h`;
   }
 
+  //Additional information
   let feelsLike = document.querySelector(".feels");
   feelsLike.innerText = `${Math.round(weather.main.feels_like)}`;
 
