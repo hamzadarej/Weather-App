@@ -36,7 +36,9 @@ function pressEnter(event) {
 }
 
 function getResults(query) {
-  fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+  fetch(
+    `${api.base}weather?q=${query}&dt=1618308000&units=metric&APPID=${api.key}`
+  )
     .then((weather) => {
       return weather.json();
     })
@@ -84,7 +86,9 @@ function displayResults(weather) {
     weather.main.temp_max
   )}°c`;
 
-  let icon = document.querySelector(".icon");
+
+  iconCode = weather.weather[0].icon;
+
 
   iconCode = weather.weather[0].icon;
   let iconLink = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
