@@ -64,13 +64,13 @@ function displayResults(weather) {
 
     switch (weatherDescription) {
       case (weatherDescription = "Clear"):
-        body.style.backgroundImage = "url('../images/Clear.jpg')";
+        body.style.backgroundImage = "url('../images/Clear1.jpg')";
         break;
       case (weatherDescription = "Clouds"):
         body.style.backgroundImage = "url('../images/Cloudy.jpeg')";
         break;
       case (weatherDescription = "Rain"):
-        body.style.backgroundImage = "url('../images/Rain.jpeg')";
+        body.style.backgroundImage = "url('../images/Rain.jpg')";
         break;
       case (weatherDescription = "Sunny"):
         body.style.backgroundImage = "url('../images/Sunny.jpg')";
@@ -86,7 +86,8 @@ function displayResults(weather) {
     weather.main.temp_max
   )}°c`;
 
-  iconCode = weather.weather[0].icon;
+
+  
 
   iconCode = weather.weather[0].icon;
   let iconLink = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
