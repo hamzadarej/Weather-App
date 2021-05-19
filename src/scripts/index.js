@@ -86,15 +86,10 @@ function displayResults(weather) {
     weather.main.temp_max
   )}°c`;
 
-
-  let icon = document.querySelector(".icon");
+  iconCode = weather.weather[0].icon;
 
   iconCode = weather.weather[0].icon;
   let iconLink = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
   let image = document.querySelector("img");
   image.src = iconLink;
-
-};
-
 }
-
