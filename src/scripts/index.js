@@ -87,8 +87,7 @@ function displayResults(weather) {
   )}°c`;
 
 
-  iconCode = weather.weather[0].icon;
-
+  
 
   iconCode = weather.weather[0].icon;
   let iconLink = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
