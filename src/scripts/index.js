@@ -36,7 +36,9 @@ function pressEnter(event) {
 }
 
 function getResults(query) {
-  fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+  fetch(
+    `${api.base}weather?q=${query}&dt=1618308000&units=metric&APPID=${api.key}`
+  )
     .then((weather) => {
       return weather.json();
     })
