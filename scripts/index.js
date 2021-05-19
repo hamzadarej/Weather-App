@@ -24,8 +24,7 @@ const getMonthName = () => {
 date.innerHTML = `${getDayName()} ${getTime()} ${getMonthName()} ${getFullYear}`;
 
 // searchbox eventlistenr & keypress
-
-const searchBox = document.querySelector(".search-box");
+const searchBox = window.document.querySelector(".search-box");
 const city = document.querySelector(".city");
 
 searchBox.addEventListener("keypress", pressEnter);
@@ -34,6 +33,8 @@ function pressEnter(event) {
     getResults(searchBox.value);
   }
 }
+
+console.log(searchBox.value);
 
 function getResults(query) {
   fetch(
