@@ -62,6 +62,28 @@ function displayResults(weather) {
   //Wind Information
   let wind = document.querySelector(".windDeg");
   wind.innerText = weather.wind.deg;
+  //wind directions N,W,S,E
+  function getWind() {
+    var windDir = weather.wind.deg;
+    console.log(windDir);
+    if (windDir >= 310 && windDir <= 360) {
+      wind.innerText = "N";
+    }
+    if (windDir >= 1 && windDir <= 50) {
+      wind.innerText = "N";
+    }
+    if (windDir <= 309 && windDir >= 230) {
+    wind.innerText = "W";
+    }
+    if (windDir <= 229 && windDir >= 130) {
+      wind.innerText = "S";
+    }
+    if (windDir >= 129 && windDir <= 49) {
+      wind.innerText = "E";
+    }
+    }
+    getWind();
+    
 
   let windSpeed = document.querySelector(".windSpeed");
   windSpeed.innerText = `${weather.wind.speed} km/h`;
@@ -110,4 +132,6 @@ function displayResults(weather) {
   let iconLink = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
   let image = document.querySelector("img");
   image.src = iconLink;
-}
+
+ 
+};
