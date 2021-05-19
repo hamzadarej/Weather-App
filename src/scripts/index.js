@@ -46,7 +46,6 @@ searchBox.addEventListener("keypress", pressEnter);
 function pressEnter(event) {
   if (event.keyCode == 13) {
     getResults(searchBox.value);
-
   }
 }
 
@@ -66,11 +65,6 @@ function displayResults(weather) {
   let temp = document.querySelector(".tempN");
   temp.innerHTML = `${Math.floor(weather.main.temp)}`;
 
-
-  let temp = document.querySelector(".tempN");
-  temp.innerHTML = `${Math.round(weather.main.temp)}`;
-
-
   let weather_el = document.querySelector(".weather");
   weather_el.innerText = weather.weather[0].main;
 
@@ -78,7 +72,6 @@ function displayResults(weather) {
   hiLow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(
     weather.main.temp_max
   )}°c`;
-
 
   let icon = document.querySelector(".icon");
   iconCode = weather.weather[0].icon;
@@ -89,5 +82,3 @@ function displayResults(weather) {
 
   image.src = iconLink;
 }
-
-
