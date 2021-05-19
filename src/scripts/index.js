@@ -68,7 +68,7 @@ function displayResults(weather) {
         body.style.backgroundImage = "url('../images/Cloudy.jpeg')";
         break;
       case (weatherDescription = "Rain"):
-        body.style.backgroundImage = "url('../images/Rain.jpeg')";
+        body.style.backgroundImage = "url('../images/Rain.jpg')";
         break;
       case (weatherDescription = "Sunny"):
         body.style.backgroundImage = "url('../images/Sunny.jpg')";
@@ -83,6 +83,8 @@ function displayResults(weather) {
   hiLow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(
     weather.main.temp_max
   )}°c`;
+
+  let icon = document.querySelector(".icon");
 
   iconCode = weather.weather[0].icon;
   let iconLink = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
