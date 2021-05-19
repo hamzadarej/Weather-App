@@ -7,17 +7,14 @@
 
 html {
   font-size: 10px;
-  body {
-    font-size: 1.6rem;
-    font-family: "montserrat", sans-serif;
+}
+body {
+  font-size: 1.6rem;
+  font-family: "montserrat", sans-serif;
+  background-image: url(../../images/bg.jpg);
 
-    background-image: url(../images/normalW.jpg);
-
-    background-image: url(../../images/normalW.jpg);
-
-    background-size: cover;
-    background-position: top center;
-    background-repeat: no-repeat;
-    position: relative;
-  }
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  position: relative;
 }

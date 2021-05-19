@@ -22,28 +22,41 @@ main {
     font-weight: 900;
     margin: 5px 0px;
     text-shadow: 2px 10px rgba(0, 0, 0, 0.3);
-    /* border: 2px solid red; */
-    span {
-      font-weight: 500;
-    }
   }
-  img {
-    margin: -20px;
-    /* border: 2px solid red; */
+  span {
+    font-weight: 500;
   }
-
-  .wind {
-    border: 2px solid red;
-    display: flex;
-    flex-direction: column;
-    /*  justify-content: space-evenly; */
-
-    margin: 20px 0;
+  .weather {
     color: #fff;
-    font-size: 20px;
+    font-size: 32px;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 15px;
+    text-shadow: 0, 0, 0, 0.4;
+  }
+  .hi-low {
+    color: #fff;
+    font-size: 24px;
     font-weight: 500;
     text-shadow: 0px 4px rgba(0, 0, 0, 0.3);
   }
+}
+img {
+  margin: -20px;
+  /* border: 2px solid red; */
+}
+
+.wind {
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  /*  justify-content: space-evenly; */
+
+  margin: 20px 0;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  text-shadow: 0px 4px rgba(0, 0, 0, 0.3);
 }
 
 .weather {
