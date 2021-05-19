@@ -51,12 +51,29 @@ function displayResults(weather) {
   console.log(weather);
 
   let temp = document.querySelector(".tempN");
-  temp.innerHTML = `${Math.floor(weather.main.temp)}`;
+  temp.innerHTML = `${Math.round(weather.main.temp)}`;
 
   let weather_el = document.querySelector(".weather");
 
   weather_el.innerText = weather.weather[0].main;
   console.log(weather_el.innerText);
+
+  let wind = document.querySelector(".windDeg");
+  wind.innerText = weather.wind.deg;
+
+  let windSpeed = document.querySelector(".windSpeed");
+  windSpeed.innerText = weather.wind.speed;
+
+  let windGust = document.querySelector(".windGust");
+  if (weather.wind.gust) {
+    windGust.innerText = weather.wind.gust;
+  }
+
+  let feelsLike = document.querySelector(".feels");
+  feelsLike.innerText = `${Math.round(weather.main.feels_like)}`;
+
+  let humidity = document.querySelector(".humidity");
+  humidity.innerText = `Humidity ${weather.main.humidity}%`;
   //change the bgImg
   function changeBg() {
     let body = document.querySelector("body");
@@ -85,9 +102,6 @@ function displayResults(weather) {
   hiLow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(
     weather.main.temp_max
   )}°c`;
-
-
-  
 
   iconCode = weather.weather[0].icon;
   let iconLink = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
