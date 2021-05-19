@@ -51,12 +51,29 @@ function displayResults(weather) {
   console.log(weather);
 
   let temp = document.querySelector(".tempN");
-  temp.innerHTML = `${Math.floor(weather.main.temp)}`;
+  temp.innerHTML = `${Math.round(weather.main.temp)}`;
 
   let weather_el = document.querySelector(".weather");
 
   weather_el.innerText = weather.weather[0].main;
   console.log(weather_el.innerText);
+
+  let wind = document.querySelector(".windDeg");
+  wind.innerText = weather.wind.deg;
+
+  let windSpeed = document.querySelector(".windSpeed");
+  windSpeed.innerText = weather.wind.speed;
+
+  let windGust = document.querySelector(".windGust");
+  if (weather.wind.gust) {
+    windGust.innerText = weather.wind.gust;
+  }
+
+  let feelsLike = document.querySelector(".feels");
+  feelsLike.innerText = `${Math.round(weather.main.feels_like)}`;
+
+  let humidity = document.querySelector(".humidity");
+  humidity.innerText = `Humidity ${weather.main.humidity}%`;
   //change the bgImg
   function changeBg() {
     let body = document.querySelector("body");
@@ -64,13 +81,13 @@ function displayResults(weather) {
 
     switch (weatherDescription) {
       case (weatherDescription = "Clear"):
-        body.style.backgroundImage = "url('../images/Clear.jpg')";
+        body.style.backgroundImage = "url('../images/Clear1.jpg')";
         break;
       case (weatherDescription = "Clouds"):
         body.style.backgroundImage = "url('../images/Cloudy.jpeg')";
         break;
       case (weatherDescription = "Rain"):
-        body.style.backgroundImage = "url('../images/Rain.jpeg')";
+        body.style.backgroundImage = "url('../images/Rain.jpg')";
         break;
       case (weatherDescription = "Sunny"):
         body.style.backgroundImage = "url('../images/Sunny.jpg')";
