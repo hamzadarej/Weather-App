@@ -84,27 +84,8 @@ function displayResults(weather) {
     weather.main.temp_max
   )}°c`;
 
-  let icon = document.querySelector(".icon");
   iconCode = weather.weather[0].icon;
-
   let iconLink = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
-
   let image = document.querySelector("img");
-
   image.src = iconLink;
 }
-//Change background depend of the Temperature
-
-/*function changeBg() {
-  
-  
-  let body = document.querySelector("body");
-
-  if (temp > 15) {
-    body.style.backgroundImage = "url('../images/bg.jpg')";
-  }
-  if (temp < 15 && temp > 10) {
-    body.style.backgroundImage = "url('../images/Cloudy.jpeg')";
-  }
-}
-changeBg();*/
