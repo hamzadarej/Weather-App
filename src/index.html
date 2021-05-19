@@ -7,7 +7,6 @@
     <title>Weather Application</title>
 
     <link rel="stylesheet" href="styles/main.css" />
-    
   </head>
 
   <body>
@@ -26,18 +25,24 @@
           <div class="date">Monday 17 May 2021</div>
         </section>
         <div class="current">
-
-          <div class="temp"><span class="tempN">12</span> <span>°c</span></div>
+          <div class="temp">
+            <span class="tempN" id="temp">12</span> <span>°c</span>
+          </div>
           <!--  <div class="icon"> -->
+
           <img
             src="http://openweathermap.org/img/wn/11d@2x.png"
             class="icon"
             alt=""
           />
-          <!--   </div> -->
 
           <div class="weather">Sunny</div>
           <div class="hi-low">13°c / 16°c</div>
+          <div class="wind">
+            <div class="windDeg">Wind dir <span>299</span></div>
+            <div class="windSpeed">Speed <span>13km/h</span></div>
+            <div class="windGust">Max-gust <span>30km/h</span></div>
+          </div>
         </div>
       </main>
     </div>
