@@ -62,11 +62,11 @@ function displayResults(weather) {
   wind.innerText = weather.wind.deg;
 
   let windSpeed = document.querySelector(".windSpeed");
-  windSpeed.innerText = weather.wind.speed;
+  windSpeed.innerText = `${weather.wind.speed} km/h`;
 
   let windGust = document.querySelector(".windGust");
   if (weather.wind.gust) {
-    windGust.innerText = weather.wind.gust;
+    windGust.innerText = `${weather.wind.gust} km/h`;
   }
 
   let feelsLike = document.querySelector(".feels");
