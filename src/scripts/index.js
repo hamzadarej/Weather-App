@@ -62,7 +62,7 @@ function displayResults(weather) {
 
     switch (weatherDescription) {
       case (weatherDescription = "Clear"):
-        body.style.backgroundImage = "url('../images/Clear.jpg')";
+        body.style.backgroundImage = "url('../images/Clear1.jpg')";
         break;
       case (weatherDescription = "Clouds"):
         body.style.backgroundImage = "url('../images/Cloudy.jpeg')";
@@ -88,4 +88,4 @@ function displayResults(weather) {
   let iconLink = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
   let image = document.querySelector("img");
   image.src = iconLink;
-};
+}
