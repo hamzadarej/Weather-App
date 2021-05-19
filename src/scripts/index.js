@@ -67,19 +67,19 @@ function displayResults(weather) {
     var windDir = weather.wind.deg;
     console.log(windDir);
     if (windDir >= 310 && windDir <= 360) {
-    console.log("N");
+      wind.innerText = "N";
     }
     if (windDir >= 1 && windDir <= 50) {
-    console.log("N");
+      wind.innerText = "N";
     }
     if (windDir <= 309 && windDir >= 230) {
-    console.log("W");
+    wind.innerText = "W";
     }
     if (windDir <= 229 && windDir >= 130) {
-    console.log("S");
+      wind.innerText = "S";
     }
     if (windDir >= 129 && windDir <= 49) {
-    console.log("E");
+      wind.innerText = "E";
     }
     }
     getWind();
