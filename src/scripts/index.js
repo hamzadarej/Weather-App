@@ -88,4 +88,4 @@ function displayResults(weather) {
   let iconLink = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
   let image = document.querySelector("img");
   image.src = iconLink;
-}
+};
