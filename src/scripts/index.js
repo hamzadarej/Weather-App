@@ -50,13 +50,55 @@ function displayResults(weather) {
   city.innerText = `${weather.name}, ${weather.sys.country}`;
   console.log(weather);
 
+  //Getting weather basic information
   let temp = document.querySelector(".tempN");
-  temp.innerHTML = `${Math.floor(weather.main.temp)}`;
+  temp.innerHTML = `${Math.round(weather.main.temp)}`;
 
   let weather_el = document.querySelector(".weather");
 
   weather_el.innerText = weather.weather[0].main;
   console.log(weather_el.innerText);
+
+  //Wind Information
+  let wind = document.querySelector(".windDeg");
+  wind.innerText = weather.wind.deg;
+  //wind directions N,W,S,E
+  function getWind() {
+    var windDir = weather.wind.deg;
+    console.log(windDir);
+    if (windDir >= 310 && windDir <= 360) {
+    console.log("N");
+    }
+    if (windDir >= 1 && windDir <= 50) {
+    console.log("N");
+    }
+    if (windDir <= 309 && windDir >= 230) {
+    console.log("W");
+    }
+    if (windDir <= 229 && windDir >= 130) {
+    console.log("S");
+    }
+    if (windDir >= 129 && windDir <= 49) {
+    console.log("E");
+    }
+    }
+    getWind();
+    
+
+  let windSpeed = document.querySelector(".windSpeed");
+  windSpeed.innerText = `${weather.wind.speed} km/h`;
+
+  let windGust = document.querySelector(".windGust");
+  if (weather.wind.gust) {
+    windGust.innerText = `${weather.wind.gust} km/h`;
+  }
+
+  //Additional information
+  let feelsLike = document.querySelector(".feels");
+  feelsLike.innerText = `${Math.round(weather.main.feels_like)}`;
+
+  let humidity = document.querySelector(".humidity");
+  humidity.innerText = `Humidity ${weather.main.humidity}%`;
   //change the bgImg
   function changeBg() {
     let body = document.querySelector("body");

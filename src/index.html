@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Application</title>
 
-    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link
+      rel="stylesheet"
+      href="./fonts/fontawesome-free-5.15.3-web/css/all.css"
+    />
   </head>
 
   <body>
@@ -26,9 +30,12 @@
         </section>
         <div class="current">
           <div class="temp">
-            <span class="tempN" id="temp">12</span> <span>°c</span>
+            <!--  <div class="icon"> -->
+            <span class="tempN" id="temp">12</span><span>°c</span>
           </div>
-          <!--  <div class="icon"> -->
+          <div class="feelsContainer">
+            Feels like <span class="feels">10</span><span>°c</span>
+          </div>
 
           <img
             src="http://openweathermap.org/img/wn/11d@2x.png"
@@ -39,9 +46,15 @@
           <div class="weather">Sunny</div>
           <div class="hi-low">13°c / 16°c</div>
           <div class="wind">
-            <div class="windDeg">Wind dir <span>299</span></div>
-            <div class="windSpeed">Speed <span>13km/h</span></div>
-            <div class="windGust">Max-gust <span>30km/h</span></div>
+            <i class="fas fa-wind"></i>
+            <div>Wind dir: <span class="windDeg">299</span></div>
+            <div>Speed: <span class="windSpeed">13km/h</span></div>
+            <div>Max-gust: <span class="windGust">0km/h</span></div>
+          </div>
+          <div class="hum-img">
+            <i class="fas fa-water"></i>
+
+            <div class="humidity">Humidity 70%</div>
           </div>
         </div>
       </main>
