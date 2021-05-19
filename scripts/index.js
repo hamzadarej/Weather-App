@@ -121,7 +121,7 @@ function displayResults(weather) {
         body.style.backgroundImage = "url('../images/snow.jpg')";
         break;
       default:
-        body.style.backgroundImage = "url('../images/normalW.jpeg')";
+        body.style.backgroundImage = "url('../images/normalW.jpg')";
     }
   }
   changeBg();
