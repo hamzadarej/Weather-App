@@ -13,12 +13,14 @@ main {
     margin-bottom: 5px;
     letter-spacing: 2px;
     text-shadow: 0px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
   }
   .location .date {
     color: #fff;
     font-size: 16px;
     letter-spacing: 2px;
     text-shadow: 0px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
   }
   .temp {
     color: #fff;
@@ -28,7 +30,7 @@ main {
     text-shadow: 2px 10px rgba(0, 0, 0, 0.3);
   }
   span {
-    font-weight: 500;
+    font-weight: 700;
   }
   .wind {
     /*  border: 2px solid red; */
@@ -39,16 +41,18 @@ main {
     margin: 20px 0;
     color: #fff;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 700;
     text-shadow: 0px 4px rgba(0, 0, 0, 0.3);
     div {
       margin: 2px 0;
+      font-weight: 700;
     }
   }
   .feelsContainer {
     font-size: 18px;
+    font-weight: 700;
     /* border: 2px solid red; */
-    color: rgb(226, 226, 226);
+    color: rgb(230, 230, 230);
     letter-spacing: 2px;
     margin-top: -5px;
     margin-bottom: 5px;
@@ -62,6 +66,7 @@ main {
     margin-top: -50px;
     letter-spacing: 2px;
     text-shadow: 0px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 900;
   }
 
   .hum-img {
@@ -69,6 +74,7 @@ main {
   .humidity {
     color: #fff;
     font-size: 20px;
+    font-weight: 700;
     letter-spacing: 2px;
     text-shadow: 0px 4px rgba(0, 0, 0, 0.3);
   }
@@ -100,6 +106,7 @@ i {
   font-size: 25px;
   margin-bottom: 10px;
   margin-top: -5px;
+  text-shadow: 0px 4px rgba(0, 0, 0, 0.3);
 }
 
 .current img {
