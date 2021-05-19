@@ -65,9 +65,6 @@ function displayResults(weather) {
   let temp = document.querySelector(".tempN");
   temp.innerHTML = `${Math.floor(weather.main.temp)}`;
 
-  let temp = document.querySelector(".tempN");
-  temp.innerHTML = `${Math.round(weather.main.temp)}`;
-
   let weather_el = document.querySelector(".weather");
   weather_el.innerText = weather.weather[0].main;
 
