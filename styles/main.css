@@ -72,34 +72,51 @@ main .location .city {
   font-size: 32px;
   font-weight: 500;
   margin-bottom: 5px;
+  letter-spacing: 2px;
 }
 main .location .date {
   color: #fff;
   font-size: 16px;
+  letter-spacing: 2px;
 }
 main .temp {
   color: #fff;
   font-size: 102px;
   font-weight: 900;
-  margin: 30px 0px;
+  margin: 5px 0px;
   text-shadow: 2px 10px rgba(0, 0, 0, 0.3);
 }
 main span {
   font-weight: 500;
 }
-main .weather {
+main .wind {
+  /*  border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  /*  justify-content: space-evenly; */
+  letter-spacing: 2px;
+  margin: 20px 0;
   color: #fff;
-  font-size: 32px;
-  font-weight: 700;
-  font-style: italic;
-  margin-bottom: 15px;
-  text-shadow: 0, 0, 0, 0.4;
-}
-main .hi-low {
-  color: #fff;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
   text-shadow: 0px 4px rgba(0, 0, 0, 0.3);
+}
+main .feels {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-top: -10px;
+  letter-spacing: 2px;
+}
+main .humidity {
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+img {
+  margin: -10px;
+  /* border: 2px solid red; */
 }
 
 .weather {
@@ -107,7 +124,7 @@ main .hi-low {
   font-size: 32px;
   font-weight: 700;
   font-style: italic;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   text-shadow: 0, 0, 0, 0.4;
 }
 
@@ -116,6 +133,13 @@ main .hi-low {
   font-size: 24px;
   font-weight: 500;
   text-shadow: 0px 4px rgba(0, 0, 0, 0.3);
+}
+
+i {
+  color: #fff;
+  font-size: 25px;
+  margin-bottom: 10px;
+  margin-top: -5px;
 }
 
 /*# sourceMappingURL=main.css.map */
