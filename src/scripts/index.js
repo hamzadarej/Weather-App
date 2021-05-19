@@ -23,20 +23,6 @@ const getMonthName = () => {
 
 date.innerHTML = `${getDayName()} ${getTime()} ${getMonthName()} ${getFullYear}`;
 
-//Change background depend of the Temperature
-function changeBg() {
-  let temp = document.querySelector(".tempN").innerHTML;
-  let body = document.querySelector("body");
-
-  if (temp > 15) {
-    body.style.backgroundImage = "url('images/sunny.jpeg')";
-  }
-  if (temp < 15 && temp > 10) {
-    body.style.backgroundImage = "url('images/Cloudy.jpeg')";
-  }
-}
-changeBg();
-
 // searchbox eventlistenr & keypress
 
 const searchBox = document.querySelector(".search-box");
@@ -46,7 +32,6 @@ searchBox.addEventListener("keypress", pressEnter);
 function pressEnter(event) {
   if (event.keyCode == 13) {
     getResults(searchBox.value);
-
   }
 }
 
@@ -66,19 +51,38 @@ function displayResults(weather) {
   let temp = document.querySelector(".tempN");
   temp.innerHTML = `${Math.floor(weather.main.temp)}`;
 
-
-  let temp = document.querySelector(".tempN");
-  temp.innerHTML = `${Math.round(weather.main.temp)}`;
-
-
   let weather_el = document.querySelector(".weather");
-  weather_el.innerText = weather.weather[0].main;
 
+  weather_el.innerText = weather.weather[0].main;
+  console.log(weather_el.innerText);
+  //change the bgImg
+  function changeBg() {
+    let body = document.querySelector("body");
+    var weatherDescription = weather.weather[0].main;
+
+    switch (weatherDescription) {
+      case (weatherDescription = "Clear"):
+        body.style.backgroundImage = "url('../images/Clear.jpg')";
+        break;
+      case (weatherDescription = "Clouds"):
+        body.style.backgroundImage = "url('../images/Cloudy.jpeg')";
+        break;
+      case (weatherDescription = "Rain"):
+        body.style.backgroundImage = "url('../images/Rain.jpeg')";
+        break;
+      case (weatherDescription = "Sunny"):
+        body.style.backgroundImage = "url('../images/Sunny.jpg')";
+        break;
+      default:
+        body.style.backgroundImage = "url('../images/normalW.jpeg')";
+    }
+  }
+  changeBg();
+  //
   let hiLow = document.querySelector(".hi-low");
   hiLow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(
     weather.main.temp_max
   )}°c`;
-
 
   let icon = document.querySelector(".icon");
   iconCode = weather.weather[0].icon;
@@ -89,5 +93,18 @@ function displayResults(weather) {
 
   image.src = iconLink;
 }
+//Change background depend of the Temperature
 
+/*function changeBg() {
+  
+  
+  let body = document.querySelector("body");
 
+  if (temp > 15) {
+    body.style.backgroundImage = "url('../images/bg.jpg')";
+  }
+  if (temp < 15 && temp > 10) {
+    body.style.backgroundImage = "url('../images/Cloudy.jpeg')";
+  }
+}
+changeBg();*/
