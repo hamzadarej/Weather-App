@@ -34,8 +34,6 @@ function pressEnter(event) {
   }
 }
 
-console.log(searchBox.value);
-
 function getResults(query) {
   fetch(
     `${api.base}weather?q=${query}&dt=1618308000&units=metric&APPID=${api.key}`
@@ -116,6 +114,9 @@ function displayResults(weather) {
         break;
       case (weatherDescription = "Sunny"):
         body.style.backgroundImage = "url('../images/Sunny.jpg')";
+        break;
+      case (weatherDescription = "Snow"):
+        body.style.backgroundImage = "url('../images/snow.jpg')";
         break;
       default:
         body.style.backgroundImage = "url('../images/normalW.jpeg')";
