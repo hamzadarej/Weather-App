@@ -73,7 +73,7 @@ function displayResults(weather) {
       wind.innerText = "N";
     }
     if (windDir <= 309 && windDir >= 230) {
-    wind.innerText = "W";
+      wind.innerText = "W";
     }
     if (windDir <= 229 && windDir >= 130) {
       wind.innerText = "S";
@@ -81,9 +81,8 @@ function displayResults(weather) {
     if (windDir >= 129 && windDir <= 49) {
       wind.innerText = "E";
     }
-    }
-    getWind();
-    
+  }
+  getWind();
 
   let windSpeed = document.querySelector(".windSpeed");
   windSpeed.innerText = `${weather.wind.speed} km/h`;
@@ -132,6 +131,4 @@ function displayResults(weather) {
   let iconLink = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
   let image = document.querySelector("img");
   image.src = iconLink;
-
- 
-};
+}
