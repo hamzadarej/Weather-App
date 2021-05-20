@@ -59,7 +59,7 @@ function displayResults(weather) {
 
   //Wind Information
   let wind = document.querySelector(".windDeg");
-  wind.innerText = weather.wind.deg;
+  // wind.innerText = weather.wind.deg;
   //wind directions N,W,S,E
   /*function getWind() {
     var windDir = weather.wind.deg;
@@ -163,12 +163,20 @@ function randomCity() {
   const defaultCities = [
     "Leipzig",
     "Berlin",
+
     "Hamburg",
     "Hammamet",
     "Paris",
     "Madrid",
     "Damaskus",
     "London",
+    "hamburg",
+    "hammamet",
+    "paris",
+    "Madrid",
+    "Damascus",
+    "london",
+
   ];
   let city;
   for (let i = 0; i <= defaultCities.length; i++) {
