@@ -152,8 +152,8 @@ function randomCity() {
     "hamburg",
     "hammamet",
     "paris",
-    "spain",
-    "syria",
+    "Madrid",
+    "Damascus",
     "london",
   ];
   let city;
