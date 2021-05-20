@@ -10,7 +10,7 @@ An application to show the weather forcast for the chosen city.
 
 ### Website Link
 
-[Visit the App](hamzadarej.github.io/weather-app/)
+[Visit Our App](https://hamzadarej.github.io/Weather-App/)
 
 ## Authors
 
