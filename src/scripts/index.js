@@ -105,22 +105,22 @@ function displayResults(weather) {
 
     switch (weatherDescription) {
       case (weatherDescription = "Clear"):
-        body.style.backgroundImage = "url('../images/Clear1.jpg')";
+        body.style.backgroundImage = "url('../../images/Clear1.jpg')";
         break;
       case (weatherDescription = "Clouds"):
-        body.style.backgroundImage = "url('../images/Cloudy.jpeg')";
+        body.style.backgroundImage = "url('../../images/Cloudy.jpeg')";
         break;
       case (weatherDescription = "Rain"):
-        body.style.backgroundImage = "url('../images/Rain.jpg')";
+        body.style.backgroundImage = "url('../../images/Rain.jpg')";
         break;
       case (weatherDescription = "Sunny"):
-        body.style.backgroundImage = "url('../images/Sunny.jpg')";
+        body.style.backgroundImage = "url('../../images/Sunny.jpg')";
         break;
       case (weatherDescription = "Snow"):
-        body.style.backgroundImage = "url('../images/snow.jpg')";
+        body.style.backgroundImage = "url('../../images/snow.jpg')";
         break;
       default:
-        body.style.backgroundImage = "url('../images/normalW.jpeg')";
+        body.style.backgroundImage = "url('../../images/normalW.jpeg')";
     }
   }
   changeBg();
