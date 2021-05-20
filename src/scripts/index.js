@@ -165,4 +165,4 @@ function randomCity() {
 
 function defaultCity() {
   getResults(randomCity());
-}
+};
