@@ -30,10 +30,9 @@ html {
 }
 
 body {
-  overflow: hidden;
   font-size: 1.6rem;
   font-family: "montserrat", sans-serif;
-  background-image: url(../../images/default.jpg);
+  background-image: url(../../img/default.jpg);
   /* filter: grayscale(100%); */
   background-size: cover;
   background-position: top center;
