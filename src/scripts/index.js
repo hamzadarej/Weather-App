@@ -97,6 +97,7 @@ function displayResults(weather) {
   );
   console.log(findDirection.direction);
   wind.innerHTML = findDirection.direction;
+  //
 
   let windSpeed = document.querySelector(".windSpeed");
   windSpeed.innerText = `${weather.wind.speed} km/h`;
