@@ -61,8 +61,8 @@ function displayResults(weather) {
 
   //Wind Information
   let wind = document.querySelector(".windDeg");
- // wind.innerText = weather.wind.deg;
-  
+  // wind.innerText = weather.wind.deg;
+
   //wind directions N,W,S,E
   /*function getWind() {
     var windDir = weather.wind.deg;
@@ -119,27 +119,30 @@ function displayResults(weather) {
   //change the bgImg
   function changeBg() {
     let body = document.querySelector("body");
-    var weatherDescription = weather.weather[0].main;
 
-    switch (weatherDescription) {
-      case (weatherDescription = "Clear"):
-        body.style.backgroundImage = "url('../img/Clear1.jpg')";
+    var weatherD = weather.weather[0].main;
+    let result;
+
+    switch (weatherD) {
+      case (weatherD = "Clear"):
+        result = "url('../img/Clear1.jpg')";
         break;
-      case (weatherDescription = "Clouds"):
-        body.style.backgroundImage = "url('../img/Cloudy.jpeg')";
+      case (weatherD = "Clouds"):
+        result = "url('../img/Cloudy.jpeg')";
         break;
-      case (weatherDescription = "Rain"):
-        body.style.backgroundImage = "url('../img/Rain.jpg')";
+      case (weatherD = "Rain"):
+        result = "url('../img/Rain.jpg')";
         break;
-      case (weatherDescription = "Sunny"):
-        body.style.backgroundImage = "url('../img/Sunny.jpg')";
+      case (weatherD = "Sunny"):
+        result = "url('../img/Sunny.jpg')";
         break;
-      case (weatherDescription = "Snow"):
-        body.style.backgroundImage = "url('../img/snow.jpg')";
+      case (weatherD = "Snow"):
+        result = "url('../img/snow.jpg')";
         break;
       default:
-        body.style.backgroundImage = "url('../img/normalW.jpg')";
+        result = "url('../img/normalW.jpg')";
     }
+    body.style.backgroundImage = result;
   }
   changeBg();
   //night background image
