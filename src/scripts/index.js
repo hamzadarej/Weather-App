@@ -161,7 +161,7 @@ function randomCity() {
     city = defaultCities[Math.floor(Math.random() * defaultCities.length)];
   }
   return city;
-}
+};
 
 function defaultCity() {
   getResults(randomCity());
