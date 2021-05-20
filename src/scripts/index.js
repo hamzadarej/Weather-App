@@ -59,9 +59,9 @@ function displayResults(weather) {
 
   //Wind Information
   let wind = document.querySelector(".windDeg");
-  wind.innerText = weather.wind.deg;
+  // wind.innerText = weather.wind.deg;
   //wind directions N,W,S,E
-  function getWind() {
+  /*function getWind() {
     var windDir = weather.wind.deg;
     console.log(windDir);
 
@@ -81,7 +81,21 @@ function displayResults(weather) {
       wind.innerText = "E";
     }
   }
-  getWind();
+  getWind();*/
+  //find the direction 
+  const windD = [
+    { direction: "N", start: 310, end: 360 },
+    { direction: "N", start: 1, end: 50 },
+    { direction: "W", start: 230, end: 309 },
+    { direction: "S", start: 130, end: 229 },
+    { direction: "E", start: 49, end: 129 },
+  ];
+  var windDir = weather.wind.deg;
+  const findDirection = windD.find(
+    (dir) => dir.start <= windDir && dir.end >= windDir
+  );
+  console.log(findDirection.direction);
+  wind.innerHTML = findDirection.direction;
 
   let windSpeed = document.querySelector(".windSpeed");
   windSpeed.innerText = `${weather.wind.speed} km/h`;
@@ -147,22 +161,30 @@ function displayResults(weather) {
 // default cities random
 function randomCity() {
   const defaultCities = [
-    "leipzig",
+    "Leipzig",
     "Berlin",
+
+    "Hamburg",
+    "Hammamet",
+    "Paris",
+    "Madrid",
+    "Damaskus",
+    "London",
     "hamburg",
     "hammamet",
     "paris",
     "Madrid",
     "Damascus",
     "london",
+
   ];
   let city;
   for (let i = 0; i <= defaultCities.length; i++) {
     city = defaultCities[Math.floor(Math.random() * defaultCities.length)];
   }
   return city;
-};
+}
 
 function defaultCity() {
   getResults(randomCity());
-};
+}
