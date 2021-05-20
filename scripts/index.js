@@ -24,8 +24,7 @@ const getMonthName = () => {
 date.innerHTML = `${getDayName()} ${getTime()} ${getMonthName()} ${getFullYear}`;
 
 // searchbox eventlistenr & keypress
-
-const searchBox = document.querySelector(".search-box");
+const searchBox = window.document.querySelector(".search-box");
 const city = document.querySelector(".city");
 
 searchBox.addEventListener("keypress", pressEnter);
@@ -57,7 +56,6 @@ function displayResults(weather) {
   let weather_el = document.querySelector(".weather");
 
   weather_el.innerText = weather.weather[0].main;
-  console.log(weather_el.innerText);
 
   //Wind Information
   let wind = document.querySelector(".windDeg");
@@ -66,6 +64,7 @@ function displayResults(weather) {
   function getWind() {
     var windDir = weather.wind.deg;
     console.log(windDir);
+
     if (windDir >= 310 && windDir <= 360) {
       wind.innerText = "N";
     }
@@ -98,6 +97,7 @@ function displayResults(weather) {
 
   let humidity = document.querySelector(".humidity");
   humidity.innerText = `Humidity ${weather.main.humidity}%`;
+
   //change the bgImg
   function changeBg() {
     let body = document.querySelector("body");
@@ -105,25 +105,34 @@ function displayResults(weather) {
 
     switch (weatherDescription) {
       case (weatherDescription = "Clear"):
-        body.style.backgroundImage = "url('../../images/Clear1.jpg')";
+        body.style.backgroundImage = "url('../images/Clear1.jpg')";
         break;
       case (weatherDescription = "Clouds"):
-        body.style.backgroundImage = "url('../../images/Cloudy.jpeg')";
+        body.style.backgroundImage = "url('../images/Cloudy.jpeg')";
         break;
       case (weatherDescription = "Rain"):
-        body.style.backgroundImage = "url('../../images/Rain.jpg')";
+        body.style.backgroundImage = "url('../images/Rain.jpg')";
         break;
       case (weatherDescription = "Sunny"):
-        body.style.backgroundImage = "url('../../images/Sunny.jpg')";
+        body.style.backgroundImage = "url('../images/Sunny.jpg')";
         break;
       case (weatherDescription = "Snow"):
-        body.style.backgroundImage = "url('../../images/snow.jpg')";
+        body.style.backgroundImage = "url('../images/snow.jpg')";
         break;
       default:
-        body.style.backgroundImage = "url('../../images/normalW.jpeg')";
+        body.style.backgroundImage = "url('../images/normalW.jpg')";
     }
   }
   changeBg();
+  //night background image
+  function nightBg() {
+    let getHours = year.getHours();
+    if (getHours >= 20 || getHours < 5) {
+      const body = document.querySelector("body");
+      body.style.backgroundImage = "url('../images/night-bg.jpg')";
+    }
+  }
+  nightBg();
   //
   let hiLow = document.querySelector(".hi-low");
   hiLow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(
@@ -134,4 +143,26 @@ function displayResults(weather) {
   let iconLink = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
   let image = document.querySelector("img");
   image.src = iconLink;
+}
+// default cities random
+function randomCity() {
+  const defaultCities = [
+    "leipzig",
+    "Berlin",
+    "hamburg",
+    "hammamet",
+    "paris",
+    "spain",
+    "syria",
+    "london",
+  ];
+  let city;
+  for (let i = 0; i <= defaultCities.length; i++) {
+    city = defaultCities[Math.floor(Math.random() * defaultCities.length)];
+  }
+  return city;
+}
+
+function defaultCity() {
+  getResults(randomCity());
 }
