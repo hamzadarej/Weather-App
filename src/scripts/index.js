@@ -41,8 +41,10 @@ function getResults(query) {
     .then((weather) => {
       return weather.json();
     })
-    .then(displayResults);
+    .then(displayResults)
+    .catch((err) => alert("Please type an existing city name"));
 }
+type;
 
 function displayResults(weather) {
   let city = document.querySelector(".city");
@@ -82,7 +84,7 @@ function displayResults(weather) {
     }
   }
   getWind();*/
-  //find the direction 
+  //find the direction
   const windD = [
     { direction: "N", start: 310, end: 360 },
     { direction: "N", start: 1, end: 50 },
@@ -176,7 +178,6 @@ function randomCity() {
     "Madrid",
     "Damascus",
     "london",
-
   ];
   let city;
   for (let i = 0; i <= defaultCities.length; i++) {
