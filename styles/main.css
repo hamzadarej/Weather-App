@@ -30,6 +30,7 @@ html {
 }
 
 body {
+  overflow: hidden;
   font-size: 1.6rem;
   font-family: "montserrat", sans-serif;
   background-image: url(../../images/default.jpg);
