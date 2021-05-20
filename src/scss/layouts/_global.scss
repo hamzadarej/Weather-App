@@ -3,13 +3,12 @@
   padding: 0;
 
   box-sizing: border-box;
-  
 }
 
 html {
   font-size: 10px;
 }
-body {overflow: hidden;
+body {
   font-size: 1.6rem;
   font-family: "montserrat", sans-serif;
   background-image: url(../../images/default.jpg);
@@ -18,5 +17,4 @@ body {overflow: hidden;
   background-position: top center;
   background-repeat: no-repeat;
   position: relative;
-  
 }
