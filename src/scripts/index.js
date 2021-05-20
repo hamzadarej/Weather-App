@@ -61,7 +61,8 @@ function displayResults(weather) {
 
   //Wind Information
   let wind = document.querySelector(".windDeg");
-  // wind.innerText = weather.wind.deg;
+ // wind.innerText = weather.wind.deg;
+  
   //wind directions N,W,S,E
   /*function getWind() {
     var windDir = weather.wind.deg;
@@ -98,6 +99,7 @@ function displayResults(weather) {
   );
   console.log(findDirection.direction);
   wind.innerHTML = findDirection.direction;
+  //
 
   let windSpeed = document.querySelector(".windSpeed");
   windSpeed.innerText = `${weather.wind.speed} km/h`;
