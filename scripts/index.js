@@ -45,7 +45,6 @@ function getResults(query) {
     .catch((err) => alert("Please type an existing city name"));
 }
 
-
 function displayResults(weather) {
   let city = document.querySelector(".city");
   city.innerText = `${weather.name}, ${weather.sys.country}`;
