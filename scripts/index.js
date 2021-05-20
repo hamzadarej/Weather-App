@@ -117,28 +117,31 @@ function displayResults(weather) {
 
   //change the bgImg
   function changeBg() {
-    let body = document.querySelector("body").style.backgroundImage;
+    let body = document.querySelector("body");
+
     var weatherD = weather.weather[0].main;
+    let result;
 
     switch (weatherD) {
       case (weatherD = "Clear"):
-        body = "url('../img/Clear1.jpg')";
+        result = "url('../img/Clear1.jpg')";
         break;
       case (weatherD = "Clouds"):
-        body = "url('../img/Cloudy.jpeg')";
+        result = "url('../img/Cloudy.jpeg')";
         break;
       case (weatherD = "Rain"):
-        body = "url('../img/Rain.jpg')";
+        result = "url('../img/Rain.jpg')";
         break;
       case (weatherD = "Sunny"):
-        body = "url('../img/Sunny.jpg')";
+        result = "url('../img/Sunny.jpg')";
         break;
       case (weatherD = "Snow"):
-        body = "url('../img/snow.jpg')";
+        result = "url('../img/snow.jpg')";
         break;
       default:
-        body = "url('../img/normalW.jpg')";
+        result = "url('../img/normalW.jpg')";
     }
+    body.style.backgroundImage = result;
   }
   changeBg();
   //night background image
