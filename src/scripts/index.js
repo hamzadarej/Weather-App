@@ -59,7 +59,7 @@ function displayResults(weather) {
 
   //Wind Information
   let wind = document.querySelector(".windDeg");
-  wind.innerText = weather.wind.deg;
+ // wind.innerText = weather.wind.deg;
   //wind directions N,W,S,E
   /*function getWind() {
     var windDir = weather.wind.deg;
