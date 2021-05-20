@@ -34,8 +34,6 @@ function pressEnter(event) {
   }
 }
 
-console.log(searchBox.value);
-
 function getResults(query) {
   fetch(
     `${api.base}weather?q=${query}&dt=1618308000&units=metric&APPID=${api.key}`
@@ -58,7 +56,6 @@ function displayResults(weather) {
   let weather_el = document.querySelector(".weather");
 
   weather_el.innerText = weather.weather[0].main;
-  console.log(weather_el.innerText);
 
   //Wind Information
   let wind = document.querySelector(".windDeg");
@@ -67,6 +64,7 @@ function displayResults(weather) {
   function getWind() {
     var windDir = weather.wind.deg;
     console.log(windDir);
+
     if (windDir >= 310 && windDir <= 360) {
       wind.innerText = "N";
     }
@@ -99,6 +97,7 @@ function displayResults(weather) {
 
   let humidity = document.querySelector(".humidity");
   humidity.innerText = `Humidity ${weather.main.humidity}%`;
+
   //change the bgImg
   function changeBg() {
     let body = document.querySelector("body");
@@ -121,10 +120,19 @@ function displayResults(weather) {
         body.style.backgroundImage = "url('../images/snow.jpg')";
         break;
       default:
-        body.style.backgroundImage = "url('../images/normalW.jpeg')";
+        body.style.backgroundImage = "url('../images/normalW.jpg')";
     }
   }
   changeBg();
+  //night background image
+  function nightBg() {
+    let getHours = year.getHours();
+    if (getHours >= 20 || getHours < 5) {
+      const body = document.querySelector("body");
+      body.style.backgroundImage = "url('../images/night-bg.jpg')";
+    }
+  }
+  nightBg();
   //
   let hiLow = document.querySelector(".hi-low");
   hiLow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(
@@ -135,4 +143,26 @@ function displayResults(weather) {
   let iconLink = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
   let image = document.querySelector("img");
   image.src = iconLink;
+}
+// default cities random
+function randomCity() {
+  const defaultCities = [
+    "leipzig",
+    "Berlin",
+    "hamburg",
+    "hammamet",
+    "paris",
+    "spain",
+    "syria",
+    "london",
+  ];
+  let city;
+  for (let i = 0; i <= defaultCities.length; i++) {
+    city = defaultCities[Math.floor(Math.random() * defaultCities.length)];
+  }
+  return city;
+}
+
+function defaultCity() {
+  getResults(randomCity());
 }
