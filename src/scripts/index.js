@@ -147,14 +147,14 @@ function displayResults(weather) {
 // default cities random
 function randomCity() {
   const defaultCities = [
-    "leipzig",
+    "Leipzig",
     "Berlin",
-    "hamburg",
-    "hammamet",
-    "paris",
-    "spain",
-    "syria",
-    "london",
+    "Hamburg",
+    "Hammamet",
+    "Paris",
+    "Madrid",
+    "Damaskus",
+    "London",
   ];
   let city;
   for (let i = 0; i <= defaultCities.length; i++) {
