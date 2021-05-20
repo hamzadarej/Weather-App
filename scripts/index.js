@@ -41,8 +41,10 @@ function getResults(query) {
     .then((weather) => {
       return weather.json();
     })
-    .then(displayResults);
+    .then(displayResults)
+    .catch((err) => alert("Please type an existing city name"));
 }
+
 
 function displayResults(weather) {
   let city = document.querySelector(".city");
@@ -59,8 +61,8 @@ function displayResults(weather) {
 
   //Wind Information
   let wind = document.querySelector(".windDeg");
- // wind.innerText = weather.wind.deg;
-  
+  // wind.innerText = weather.wind.deg;
+
   //wind directions N,W,S,E
   /*function getWind() {
     var windDir = weather.wind.deg;
@@ -83,7 +85,7 @@ function displayResults(weather) {
     }
   }
   getWind();*/
-  //find the direction 
+  //find the direction
   const windD = [
     { direction: "N", start: 310, end: 360 },
     { direction: "N", start: 1, end: 50 },
@@ -97,6 +99,7 @@ function displayResults(weather) {
   );
   console.log(findDirection.direction);
   wind.innerHTML = findDirection.direction;
+  //
 
   let windSpeed = document.querySelector(".windSpeed");
   windSpeed.innerText = `${weather.wind.speed} km/h`;
@@ -115,27 +118,27 @@ function displayResults(weather) {
 
   //change the bgImg
   function changeBg() {
-    let body = document.querySelector("body");
-    var weatherDescription = weather.weather[0].main;
+    let body = document.querySelector("body").style.backgroundImage;
+    var weatherD = weather.weather[0].main;
 
-    switch (weatherDescription) {
-      case (weatherDescription = "Clear"):
-        body.style.backgroundImage = "url('../img/Clear1.jpg')";
+    switch (weatherD) {
+      case (weatherD = "Clear"):
+        body = "url('../img/Clear1.jpg')";
         break;
-      case (weatherDescription = "Clouds"):
-        body.style.backgroundImage = "url('../img/Cloudy.jpeg')";
+      case (weatherD = "Clouds"):
+        body = "url('../img/Cloudy.jpeg')";
         break;
-      case (weatherDescription = "Rain"):
-        body.style.backgroundImage = "url('../img/Rain.jpg')";
+      case (weatherD = "Rain"):
+        body = "url('../img/Rain.jpg')";
         break;
-      case (weatherDescription = "Sunny"):
-        body.style.backgroundImage = "url('../img/Sunny.jpg')";
+      case (weatherD = "Sunny"):
+        body = "url('../img/Sunny.jpg')";
         break;
-      case (weatherDescription = "Snow"):
-        body.style.backgroundImage = "url('../img/snow.jpg')";
+      case (weatherD = "Snow"):
+        body = "url('../img/snow.jpg')";
         break;
       default:
-        body.style.backgroundImage = "url('../img/normalW.jpg')";
+        body = "url('../img/normalW.jpg')";
     }
   }
   changeBg();
@@ -177,7 +180,6 @@ function randomCity() {
     "Madrid",
     "Damascus",
     "london",
-
   ];
   let city;
   for (let i = 0; i <= defaultCities.length; i++) {
