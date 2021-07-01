@@ -124,22 +124,22 @@ function displayResults(weather) {
 
     switch (weatherD) {
       case (weatherD = "Clear"):
-        result = "url('../img/Clear1.jpg')";
+        result = "url('images/Clear1.jpg')";
         break;
       case (weatherD = "Clouds"):
-        result = "url('../img/Cloudy.jpeg')";
+        result = "url('images/Cloudy.jpeg')";
         break;
       case (weatherD = "Rain"):
-        result = "url('../img/Rain.jpg')";
+        result = "url('images/Rain.jpg')";
         break;
       case (weatherD = "Sunny"):
-        result = "url('../img/Sunny.jpg')";
+        result = "url('images/Sunny.jpg')";
         break;
       case (weatherD = "Snow"):
-        result = "url('../img/snow.jpg')";
+        result = "url('images/snow.jpg')";
         break;
       default:
-        result = "url('../img/normalW.jpg')";
+        result = "url('images/normalW.jpg')";
     }
     body.style.backgroundImage = result;
   }
@@ -169,15 +169,13 @@ function randomCity() {
   const defaultCities = [
     "Leipzig",
     "Berlin",
-
     "Hamburg",
-    "Hammamet",
     "Paris",
     "Madrid",
     "Damaskus",
     "London",
     "hamburg",
-    "hammamet",
+    "tunisia",
     "paris",
     "Madrid",
     "Damascus",
