@@ -44,6 +44,7 @@ function getResults(query) {
     .then(displayResults)
     .catch((err) => alert("Please type an existing city name"));
 }
+type;
 
 function displayResults(weather) {
   let city = document.querySelector(".city");
