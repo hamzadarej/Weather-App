@@ -124,22 +124,22 @@ function displayResults(weather) {
 
     switch (weatherD) {
       case (weatherD = "Clear"):
-        result = "url('../images/Clear1.jpg')";
+        result = "url('images/Clear1.jpg')";
         break;
       case (weatherD = "Clouds"):
-        result = "url('../images/Cloudy.jpeg')";
+        result = "url('images/Cloudy.jpeg')";
         break;
       case (weatherD = "Rain"):
-        result = "url('../images/Rain.jpg')";
+        result = "url('images/Rain.jpg')";
         break;
       case (weatherD = "Sunny"):
-        result = "url('../images/Sunny.jpg')";
+        result = "url('images/Sunny.jpg')";
         break;
       case (weatherD = "Snow"):
-        result = "url('../images/snow.jpg')";
+        result = "url('images/snow.jpg')";
         break;
       default:
-        result = "url('../images/normalW.jpg')";
+        result = "url('images/normalW.jpg')";
     }
     body.style.backgroundImage = result;
   }
