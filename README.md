@@ -30,4 +30,4 @@ Kenan Alnaser
     * Initial Release
 
 ## Screenshot
-![Weather App](./src/img/Weather-App.jpg)
+![Weather App](./src/images/Weather-App.jpg)
