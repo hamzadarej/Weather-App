@@ -1,6 +1,7 @@
 {
   "name": "weather-app",
   "version": "1.0.0",
+  "homepage": "https://weather-app-self.vercel.app/",
   "main": "index.js",
   "scripts": {
     "start": "run-p watch watch:styles",
@@ -30,7 +31,6 @@
     "npm-run-all": "^4.1.5",
     "sass": "^1.32.13"
   },
-
   "keywords": [],
   "dependencies": {},
   "description": ""
